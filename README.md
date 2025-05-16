@@ -1,4 +1,4 @@
-# Discord Message Relay Self Bot [Grow A Garden Branch]
+# Discord Message Relay Self Bot [Branch: Grow A Garden - Embedded]
 - By Thomas Truong
 
 ## ! WARNING !
@@ -8,6 +8,7 @@
 ## About
 - Grow A Garden is a ROBLOX game.
 - Relays messages from Grow A Garden's official stock Discord to my own server.
+  - Customizes the relayed message with embedded style.
 
 ## Prerequisites
 - discord.py-self
