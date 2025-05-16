@@ -8,6 +8,7 @@
 from discord.ext import commands
 import requests
 
+
 # Insert your Discord account's token (PREFERRABLY AN ALT).
 TOKEN = "AccountTokenHere"
 # Insert your webhook URL for the channel you want the copied text to go.
@@ -22,13 +23,13 @@ bot = commands.Bot(command_prefix = "", self_bot = True)
 
 @bot.event
 async def on_ready():
-  """When the bot finishes loading up."""
+  """ When the bot finishes loading up. """
   print("Bot is ready.")
 
 
 @bot.event
 async def on_message(message):
-  """When a message is sent."""
+  """ When a message is sent. """
   # Ignore messages not from the correct server or channel.
   if message.guild.id != GUILD_ID or message.channel.id != CHANNEL_ID:
     return
@@ -47,7 +48,6 @@ async def on_message(message):
 
   # Send message to webhook.
   requests.post(WEBHOOK_URL, json = {"content": content}, timeout = 60)
-
 
 
 bot.run(TOKEN)
