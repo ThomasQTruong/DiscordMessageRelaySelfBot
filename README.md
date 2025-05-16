@@ -1,4 +1,4 @@
-# Discord Message Relay Self Bot [Grow A Garden Branch]
+# Discord Message Relay Self Bot [Branch: Grow A Garden]
 - By Thomas Truong
 
 ## ! WARNING !
