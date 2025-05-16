@@ -1,4 +1,4 @@
-# Discord Message Relay Self Bot
+# Discord Message Relay Self Bot [Grow A Garden Branch]
 - By Thomas Truong
 
 ## ! WARNING !
@@ -6,8 +6,8 @@
   - Highly recommended to use an alt account (throw-away account).
 
 ## About
-- Relays messages from a Discord channel to a different channel.
-  - Can be a channel from the same server or a different server.
+- Grow A Garden is a ROBLOX game.
+- Relays messages from Grow A Garden's official stock Discord to my own server.
 
 ## Prerequisites
 - discord.py-self

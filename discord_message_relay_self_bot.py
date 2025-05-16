@@ -13,9 +13,49 @@ TOKEN = "AccountTokenHere"
 # Insert your webhook URL for the channel you want the copied text to go.
 WEBHOOK_URL = "YourOwnChannelWebHookURL"
 # Insert the server's ID that you want to copy the message from.
-GUILD_ID = 0
+GUILD_ID = 1371970717444341802
 # Inset the server's channel ID that you want to copy the message from.
-CHANNEL_ID = 0
+CHANNEL_ID = 1371986851346386944
+ROLE_IDS = {
+  # Seeds
+  "Carrot": 1372815089752739931,
+  "Strawberry": 1372815176814034984,
+  "Blueberry": 1372815230060728431,
+  "Orange Tulip": 1372815271198331003,
+  "Tomato": 1372815318380187699,
+  "Corn": 1372815353696223253,
+  "Daffodil": 1372815384956239953,
+  "Watermelon": 1372452314266210315,
+  "Pumpkin": 1372452293844406292,
+  "Apple": 1372815518695952384,
+  "Bamboo": 1372452206795554867,
+  "Coconut": 1372452261334355999,
+  "Cactus": 1372452222994092134,
+  "Dragon Fruit": 1372452177867575327,
+  "Mango: ": 1372452145034563647,
+  "Grape": 1372451824866689045,
+  "Mushroom": 1372452342091223081,
+  "Pepper": 1372452163908796486,
+  "Cacao": 1372452363067195443,
+
+  # Gears
+  "Watering Can": 1372814927076786206,
+  "Trowel": 1372814844817969222,
+  "Recall Wrench": 1372815973299650560,
+  "Basic Sprinkler": 1372814869015040020,
+  "Advanced Sprinkler": 1372452574027976764,
+  "Godly Sprinkler": 1372452630240170014,
+  "Master Sprinkler": 1372452602872201327,
+  "Lightning Rod": 1372452649831632976,
+  "Favorite Tool": 1372814811603144704,
+
+  # Eggs
+  "Common Egg": 1372818043075563540,
+  "Uncommon Egg": 1372818095927726170,
+  "Rare Egg": 1372452481304629310,
+  "Legendary Egg": 1372452534098202694,
+  "Bug Egg": 1372452558513246299
+}
 
 
 bot = commands.Bot(command_prefix = "", self_bot = True)
@@ -43,7 +83,7 @@ async def on_message(message):
   # Replace role mentions with plain text.
   for role in message.role_mentions:
     mention_str = f"<@&{role.id}>"
-    content = content.replace(mention_str, f"<@&{role.name}>")
+    content = content.replace(mention_str, f"<@&{ROLE_IDS[role.name]}>")
 
   # Send message to webhook.
   requests.post(WEBHOOK_URL, json = {"content": content}, timeout = 60)
