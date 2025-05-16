@@ -12,9 +12,9 @@ import requests
 TOKEN = "AccountTokenHere"
 # Insert your webhook URL for the channel you want the copied text to go.
 WEBHOOK_URL = "YourOwnChannelWebHookURL"
-# The server's ID that you want to copy the message from.
+# Insert the server's ID that you want to copy the message from.
 GUILD_ID = 0
-# The server's channel ID that you want to copy the message from.
+# Inset the server's channel ID that you want to copy the message from.
 CHANNEL_ID = 0
 
 
