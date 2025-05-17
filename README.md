@@ -26,16 +26,25 @@
 - Insert information needed in [discord_message_relay_self_bot.py](discord_message_relay_self_bot.py).
   - TOKEN
     - Your Discord account's token (PREFERRABLY AN ALT ACCOUNT).
-    - Click on your own profile (bottom left of app) -> Copy User ID (at the bottom).
+    1. Press CTRL + Shift + I to open inspect element.
+        - Switch to web browser version if this doesn't work.
+    2. Click on Network
+    3. Refresh (Ctrl + R or click the refresh button if browser).
+    4. Filter for `messages`.
+    5. Select it and look under `Request Headers` -> `Authorization:` for the token.
+        - Recommended to keep this private.
   - WEBHOOK_URL
     - Your webhook URL for the channel you want the copied text to go.
     - Your Server -> Right-Click Channel -> Edit Channel -> Integrations -> Webhooks -> New Webhook -> Click on Webhook -> Copy Webhook URL.
+        - Recommended to keep this private.
   - EMBEDDED_STOCK_URL
-    - # Insert your webhook URL for the channel you want the embedded stock message to go.
+    - Insert your webhook URL for the channel you want the embedded stock message to go.
     - Your Server -> Right-Click Channel -> Edit Channel -> Integrations -> Webhooks -> New Webhook -> Click on Webhook -> Copy Webhook URL.
+        - Recommended to keep this private.
   - EMBEDDED_EGGS_URL
-    - # Insert your webhook URL for the channel you want the embedded eggs message to go.
+    - Insert your webhook URL for the channel you want the embedded eggs message to go.
     - Your Server -> Right-Click Channel -> Edit Channel -> Integrations -> Webhooks -> New Webhook -> Click on Webhook -> Copy Webhook URL.
+        - Recommended to keep this private.
   - GUILD_ID
     - The server's ID that you want to copy the message from.
       - Right-Click on Target Server -> Copy Server ID.
