@@ -5,14 +5,18 @@
   different server.
 """
 
+import discord
 from discord.ext import commands
 import requests
-
 
 # Insert your Discord account's token (PREFERRABLY AN ALT).
 TOKEN = "AccountTokenHere"
 # Insert your webhook URL for the channel you want the copied text to go.
 WEBHOOK_URL = "YourOwnChannelWebHookURL"
+# Insert your webhook URL for the channel you want the embedded stock to go.
+EMBEDDED_STOCK_URL = "YourOwnChannelWebHookURL2"
+# Insert your webhook URL for the channel you want the embedded eggs to go.
+EMBEDDED_EGGS_URL = "YourOwnChannelWebHookURL3"
 # Insert the server's ID that you want to copy the message from.
 GUILD_ID = 1371970717444341802
 # Inset the server's channel ID that you want to copy the message from.
@@ -80,14 +84,58 @@ async def on_message(message):
 
   # Correct message to relay found.
   content = f"{message.content}"
+  embedded_content = content = f"{message.content}"
 
   # Replace role mentions with plain text.
   for role in message.role_mentions:
     mention_str = f"<@&{role.id}>"
     content = content.replace(mention_str, f"<@&{ROLE_IDS[role.name]}>")
+    embedded_content = embedded_content.replace(mention_str, f"{role.name}")
 
   # Send message to webhook.
   requests.post(WEBHOOK_URL, json = {"content": content}, timeout = 60)
+
+  # Send embedded message to webhook.
+  embed = discord.Embed(color = 0xFEE9FF)
+
+  # Extract and clean the title up.
+  embedded_content_split = embedded_content.split("\n")
+  cleaned_title = embedded_content_split[0].replace("## ", "")
+  cleaned_title = cleaned_title.replace(" Update", "")
+  cleaned_title = cleaned_title.replace("SeedStock", "Seeds Stock")
+  cleaned_title = cleaned_title.replace("GearStock", "Gears Stock")
+  cleaned_title = cleaned_title.replace("Egg Stock", "Eggs Stock")
+
+  # Create embed message and obtain roles to ping.
+  embedded_items_text = ""
+  ping_roles = ""
+  for i in range(1, len(embedded_content_split) - 1):
+    # Switch from x# format into #x format.
+    formatted_item_text = embedded_content_split[i].replace("x", "")
+    formatted_item_text = formatted_item_text.replace("*", "")
+    quantity_item_list = formatted_item_text.split(" ", 1)
+    formatted_item_text = f"`{quantity_item_list[0]}x` {quantity_item_list[1]}"
+
+    # Add to ping_roles if it is unique.
+    if str(ROLE_IDS[quantity_item_list[1]]) not in ping_roles:
+      ping_roles = ping_roles + f"<@&{ROLE_IDS[quantity_item_list[1]]}> "
+
+    embedded_items_text = embedded_items_text + formatted_item_text + "\n"
+  embed.add_field(name = cleaned_title, value = embedded_items_text,
+                      inline = False)
+  embed.add_field(name = "", value = embedded_content_split[-1], inline = False)
+
+  # Message to be sent.
+  payload = {
+    "content": ping_roles,
+    "embeds": [embed.to_dict()]
+  }
+
+  # Send to correct channel based on stock type.
+  if cleaned_title in ("Seeds Stock", "Gears Stock"):
+    requests.post(EMBEDDED_STOCK_URL, json = payload, timeout = 60)
+  elif cleaned_title == "Eggs Stock":
+    requests.post(EMBEDDED_EGGS_URL, json = payload, timeout = 60)
 
 
 bot.run(TOKEN)

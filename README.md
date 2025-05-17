@@ -30,6 +30,12 @@
   - WEBHOOK_URL
     - Your webhook URL for the channel you want the copied text to go.
     - Your Server -> Right-Click Channel -> Edit Channel -> Integrations -> Webhooks -> New Webhook -> Click on Webhook -> Copy Webhook URL.
+  - EMBEDDED_STOCK_URL
+    - # Insert your webhook URL for the channel you want the embedded stock message to go.
+    - Your Server -> Right-Click Channel -> Edit Channel -> Integrations -> Webhooks -> New Webhook -> Click on Webhook -> Copy Webhook URL.
+  - EMBEDDED_EGGS_URL
+    - # Insert your webhook URL for the channel you want the embedded eggs message to go.
+    - Your Server -> Right-Click Channel -> Edit Channel -> Integrations -> Webhooks -> New Webhook -> Click on Webhook -> Copy Webhook URL.
   - GUILD_ID
     - The server's ID that you want to copy the message from.
       - Right-Click on Target Server -> Copy Server ID.
