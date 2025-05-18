@@ -64,6 +64,15 @@ ROLE_IDS = {
   "Bug Egg": 1372452558513246299
 }
 
+GOOD_ITEMS = [
+  # Seeds
+  "Grape", "Mushroom", "Pepper", "Cacao", "Beanstalk",
+  # Gears
+  "Lightning Rod", "Master Sprinkler",
+  # Eggs
+  "Legendary Egg", "Mythical Egg", "Bug Egg"
+]
+
 
 bot = commands.Bot(command_prefix = "", self_bot = True)
 
@@ -116,7 +125,11 @@ async def on_message(message):
     formatted_item_text = embedded_content_split[i].replace("x", "")
     formatted_item_text = formatted_item_text.replace("*", "")
     quantity_item_list = formatted_item_text.split(" ", 1)
-    formatted_item_text = f"`{quantity_item_list[0]}x` {quantity_item_list[1]}"
+    # Format based on whether the item is good or not (has stars around if good).
+    if quantity_item_list[1] in GOOD_ITEMS:
+      formatted_item_text = f"`{quantity_item_list[0]}x` :star: {quantity_item_list[1]} :star:"
+    else:
+      formatted_item_text = f"`{quantity_item_list[0]}x` {quantity_item_list[1]}"
 
     # Add to ping_roles if it is unique.
     if str(ROLE_IDS[quantity_item_list[1]]) not in ping_roles:
