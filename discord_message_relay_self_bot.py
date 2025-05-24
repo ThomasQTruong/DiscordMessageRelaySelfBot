@@ -21,6 +21,7 @@ EMBEDDED_EGGS_URL = "YourOwnChannelWebHookURL3"
 GUILD_ID = 1371970717444341802
 # Inset the server's channel ID that you want to copy the message from.
 CHANNEL_ID = 1371986851346386944
+# Replace with the server's role IDs for the crops.
 ROLE_IDS = {
   # Seeds
   "Carrot": 1372815089752739931,
@@ -54,6 +55,7 @@ ROLE_IDS = {
   "Master Sprinkler": 1372452602872201327,
   "Lightning Rod": 1372452649831632976,
   "Favorite Tool": 1372814811603144704,
+  "Harvest Tool": 1375973801753448489,
 
   # Eggs
   "Common Egg": 1372818043075563540,
@@ -63,12 +65,12 @@ ROLE_IDS = {
   "Mythical Egg": 1373415657076555868,
   "Bug Egg": 1372452558513246299
 }
-
+# Items that will be displayed between stars to indicate that it is good.
 GOOD_ITEMS = [
   # Seeds
   "Grape", "Mushroom", "Pepper", "Cacao", "Beanstalk",
   # Gears
-  "Lightning Rod", "Master Sprinkler",
+  "Lightning Rod", "Master Sprinkler", "Harvest Tool",
   # Eggs
   "Legendary Egg", "Mythical Egg", "Bug Egg"
 ]

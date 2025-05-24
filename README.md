@@ -51,6 +51,12 @@
   - CHANNEL_ID
     - The server's channel ID that you want to copy the message from.
       - Select Server -> Right-Click on Target Channel -> Copy Channel ID.
+  - ROLE_IDS
+    - Replace with the server's role IDs for the crops.
+      - Right-Click on Your Server -> Server Settings -> Roles -> Right-Click a Role -> Copy Role ID.
+  - GOOD_ITEMS
+    - Items that will be displayed between stars to indicate that it is good.
+      - Example: ⭐ Bug Egg ⭐
 - Run [discord_message_relay_self_bot.py](discord_message_relay_self_bot.py) and it should automatically work once a new message is sent in the target channel.
 - 24/7 Hosting: [Wispbyte](http://wispbyte.com/)
   - I came across this site which offers free 24/7 hosting and I am currently using this.
