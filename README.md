@@ -14,6 +14,8 @@
   - > pip install -U discord.py-self
 - requests
   - > pip install -U requests
+- asyncio
+  - > pip install -U asyncio
 - Developer Mode enabled on Discord
   - Only needed for setting up the bot; not needed after.
     - You can leave it enabled or disable if you want; personally, I always have it enabled.

@@ -7,6 +7,7 @@
 
 from discord.ext import commands
 import requests
+import asyncio
 
 
 # Insert your Discord account's token (PREFERRABLY AN ALT).
@@ -40,6 +41,7 @@ ROLE_IDS = {
   "Pepper": 1372452163908796486,
   "Cacao": 1372452363067195443,
   "Beanstalk": 1373415455632392212,
+  "Ember Lily": 1381033956610408489,
 
   # Gears
   "Watering Can": 1372814927076786206,
@@ -52,6 +54,7 @@ ROLE_IDS = {
   "Lightning Rod": 1372452649831632976,
   "Favorite Tool": 1372814811603144704,
   "Harvest Tool": 1375973801753448489,
+  "Friendship Pot": 1381033769649049702,
 
   # Eggs
   "Common Egg": 1372818043075563540,
@@ -87,11 +90,17 @@ async def on_message(message):
 
   # Replace role mentions with plain text.
   for role in message.role_mentions:
+    # If the item isn't added to the bot yet, print and ignore.
+    if role.name not in list(ROLE_IDS.keys):
+      print(f"{role.name} doesn't exist in ROLE_IDS!")
+      continue
+
     mention_str = f"<@&{role.id}>"
     content = content.replace(mention_str, f"<@&{ROLE_IDS[role.name]}>")
 
   # Send message to webhook.
   requests.post(WEBHOOK_URL, json = {"content": content}, timeout = 60)
+  await asyncio.sleep(5)
 
 
 bot.run(TOKEN)
