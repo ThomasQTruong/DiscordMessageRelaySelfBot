@@ -8,6 +8,7 @@
 import discord
 from discord.ext import commands
 import requests
+import asyncio
 
 # Insert your Discord account's token (PREFERRABLY AN ALT).
 TOKEN = "AccountTokenHere"
@@ -44,6 +45,7 @@ ROLE_IDS = {
   "Pepper": 1372452163908796486,
   "Cacao": 1372452363067195443,
   "Beanstalk": 1373415455632392212,
+  "Ember Lily": 1381033956610408489,
 
   # Gears
   "Watering Can": 1372814927076786206,
@@ -56,6 +58,7 @@ ROLE_IDS = {
   "Lightning Rod": 1372452649831632976,
   "Favorite Tool": 1372814811603144704,
   "Harvest Tool": 1375973801753448489,
+  "Friendship Pot": 1381033769649049702,
 
   # Eggs
   "Common Egg": 1372818043075563540,
@@ -68,9 +71,9 @@ ROLE_IDS = {
 # Items that will be displayed between stars to indicate that it is good.
 GOOD_ITEMS = [
   # Seeds
-  "Grape", "Mushroom", "Pepper", "Cacao", "Beanstalk",
+  "Grape", "Mushroom", "Pepper", "Cacao", "Beanstalk", "Ember Lily",
   # Gears
-  "Lightning Rod", "Master Sprinkler", "Harvest Tool",
+  "Lightning Rod", "Master Sprinkler", "Friendship Pot",
   # Eggs
   "Legendary Egg", "Mythical Egg", "Bug Egg"
 ]
@@ -151,8 +154,10 @@ async def on_message(message):
   # Send to correct channel based on stock type.
   if cleaned_title in ("Seeds Stock", "Gears Stock"):
     requests.post(EMBEDDED_STOCK_URL, json = payload, timeout = 60)
+    await asyncio.sleep(5)
   elif cleaned_title == "Eggs Stock":
     requests.post(EMBEDDED_EGGS_URL, json = payload, timeout = 60)
+    await asyncio.sleep(5)
 
 
 bot.run(TOKEN)
