@@ -104,6 +104,11 @@ async def on_message(message):
 
   # Replace role mentions with plain text.
   for role in message.role_mentions:
+    # If the item isn't added to the bot yet, print and ignore.
+    if role.name not in list(ROLE_IDS.keys):
+      print(f"{role.name} doesn't exist in ROLE_IDS!")
+      continue
+
     mention_str = f"<@&{role.id}>"
     content = content.replace(mention_str, f"<@&{ROLE_IDS[role.name]}>")
     embedded_content = embedded_content.replace(mention_str, f"{role.name}")
