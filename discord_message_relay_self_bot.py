@@ -104,6 +104,9 @@ async def on_message(message):
 
   # Replace role mentions with plain text.
   for role in message.role_mentions:
+    # Official server messed up on this for Ember Lily and Friendship Pot.
+    role.name = role.name.replace(" (ROLE NOT FOUND)", "")
+
     # If the item isn't added to the bot yet, print and ignore.
     if role.name not in ROLE_IDS:
       print(f"{role.name} doesn't exist in ROLE_IDS!")
@@ -141,9 +144,11 @@ async def on_message(message):
     else:
       formatted_item_text = f"`{quantity_item_list[0]}x` {quantity_item_list[1]}"
 
-    # Add to ping_roles if it is unique.
-    if str(ROLE_IDS[quantity_item_list[1]]) not in ping_roles:
-      ping_roles = ping_roles + f"<@&{ROLE_IDS[quantity_item_list[1]]}> "
+    # If the role exists.
+    if quantity_item_list[1] in ROLE_IDS:
+      # Add to ping_roles if it is unique.
+      if str(ROLE_IDS[quantity_item_list[1]]) not in ping_roles:
+        ping_roles = ping_roles + f"<@&{ROLE_IDS[quantity_item_list[1]]}> "
 
     embedded_items_text = embedded_items_text + formatted_item_text + "\n"
   embed.add_field(name = cleaned_title, value = embedded_items_text,
