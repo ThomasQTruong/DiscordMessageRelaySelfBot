@@ -90,6 +90,9 @@ async def on_message(message):
 
   # Replace role mentions with plain text.
   for role in message.role_mentions:
+    # Official server messed up on this for Ember Lily and Friendship Pot.
+    role.name = role.name.replace(" (ROLE NOT FOUND)", "")
+
     # If the item isn't added to the bot yet, print and ignore.
     if role.name not in ROLE_IDS:
       print(f"{role.name} doesn't exist in ROLE_IDS!")
