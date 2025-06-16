@@ -46,6 +46,7 @@ ROLE_IDS = {
   "Cacao": 1372452363067195443,
   "Beanstalk": 1373415455632392212,
   "Ember Lily": 1381033956610408489,
+  "Sugar Apple": 1383914061649023006,
 
   # Gears
   "Watering Can": 1372814927076786206,
@@ -55,6 +56,7 @@ ROLE_IDS = {
   "Advanced Sprinkler": 1372452574027976764,
   "Godly Sprinkler": 1372452630240170014,
   "Master Sprinkler": 1372452602872201327,
+  "Cleaning Spray": 1383914169677516840,
   "Lightning Rod": 1372452649831632976,
   "Favorite Tool": 1372814811603144704,
   "Harvest Tool": 1375973801753448489,
@@ -71,7 +73,7 @@ ROLE_IDS = {
 # Items that will be displayed between stars to indicate that it is good.
 GOOD_ITEMS = [
   # Seeds
-  "Grape", "Mushroom", "Pepper", "Cacao", "Beanstalk", "Ember Lily",
+  "Grape", "Mushroom", "Pepper", "Cacao", "Beanstalk", "Ember Lily", "Sugar Apple",
   # Gears
   "Lightning Rod", "Master Sprinkler", "Friendship Pot",
   # Eggs
@@ -100,13 +102,19 @@ async def on_message(message):
 
   # Correct message to relay found.
   content = f"{message.content}"
-  embedded_content = content = f"{message.content}"
+  embedded_content = f"{message.content}"
+
+  # Official server messed up on this for Friendship Pot.
+  ping_roles = ""
+  if "Friendship Pot" in message.content:
+    content = content.replace("Friendship Pot (ROLE NOT FOUND)",
+                              f"<@&{ROLE_IDS['Friendship Pot']}>")
+    embedded_content = embedded_content.replace("Friendship Pot (ROLE NOT FOUND)", "Friendship Pot")
+    ping_roles += f"<@&{ROLE_IDS['Friendship Pot']}>"
+
 
   # Replace role mentions with plain text.
   for role in message.role_mentions:
-    # Official server messed up on this for Ember Lily and Friendship Pot.
-    role.name = role.name.replace(" (ROLE NOT FOUND)", "")
-
     # If the item isn't added to the bot yet, print and ignore.
     if role.name not in ROLE_IDS:
       print(f"{role.name} doesn't exist in ROLE_IDS!")
@@ -132,7 +140,6 @@ async def on_message(message):
 
   # Create embed message and obtain roles to ping.
   embedded_items_text = ""
-  ping_roles = ""
   for i in range(1, len(embedded_content_split) - 1):
     # Switch from x# format into #x format.
     formatted_item_text = embedded_content_split[i].replace("x", "")
