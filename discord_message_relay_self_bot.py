@@ -47,6 +47,16 @@ ROLE_IDS = {
   "Beanstalk": 1373415455632392212,
   "Ember Lily": 1381033956610408489,
   "Sugar Apple": 1383914061649023006,
+  "Cauliflower": 1386081116150042758,
+  "Green Apple": 1386081963810488462,
+  "Avocado": 1386082116365717595,
+  "Banana": 1386082332389412957,
+  "Pineapple": 1386082565827592365,
+  "Kiwi": 1386082697620881612,
+  "Bell Pepper": 1386082762313699439,
+  "Prickly Pear": 1386082836766916608,
+  "Loquat": 1386083080686669844,
+  "Feijoa": 1386083160185634967,
 
   # Gears
   "Watering Can": 1372814927076786206,
@@ -56,8 +66,8 @@ ROLE_IDS = {
   "Advanced Sprinkler": 1372452574027976764,
   "Godly Sprinkler": 1372452630240170014,
   "Master Sprinkler": 1372452602872201327,
+  "Tanning Mirror": 1386080730089652324,
   "Cleaning Spray": 1383914169677516840,
-  "Lightning Rod": 1372452649831632976,
   "Favorite Tool": 1372814811603144704,
   "Harvest Tool": 1375973801753448489,
   "Friendship Pot": 1381033769649049702,
@@ -68,16 +78,19 @@ ROLE_IDS = {
   "Rare Egg": 1372452481304629310,
   "Legendary Egg": 1372452534098202694,
   "Mythical Egg": 1373415657076555868,
-  "Bug Egg": 1372452558513246299
+  "Bug Egg": 1372452558513246299,
+  "Common Summer Egg": 1386080128475594834,
+  "Rare Summer Egg": 1386080182095581244,
+  "Paradise Egg": 1386080215763259484
 }
 # Items that will be displayed between stars to indicate that it is good.
 GOOD_ITEMS = [
   # Seeds
-  "Grape", "Mushroom", "Pepper", "Cacao", "Beanstalk", "Ember Lily", "Sugar Apple",
+  "Loquat", "Feijoa", "Sugar Apple",
   # Gears
-  "Lightning Rod", "Master Sprinkler", "Friendship Pot",
+  "Master Sprinkler",
   # Eggs
-  "Legendary Egg", "Mythical Egg", "Bug Egg"
+  "Legendary Egg", "Mythical Egg", "Bug Egg", "Rare Summer Egg", "Paradise Egg"
 ]
 
 
