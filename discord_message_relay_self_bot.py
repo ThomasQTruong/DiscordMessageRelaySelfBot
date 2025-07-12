@@ -56,6 +56,7 @@ ROLE_IDS = {
   "Feijoa": 1386083160185634967,
   "Pitcher Plant": 1388643648639598612,
   "Burning Bud": 1391160305064611911,
+  "Giant Pinecone": 1393704409896059021,
 
   # Gears
   "Watering Can": 1372814927076786206,
@@ -65,12 +66,15 @@ ROLE_IDS = {
   "Advanced Sprinkler": 1372452574027976764,
   "Godly Sprinkler": 1372452630240170014,
   "Master Sprinkler": 1372452602872201327,
+  "Medium Toy": 1393704948566458408,
+  "Medium Treat": 1393704818799022100,
   "Magnifying Glass": 1388642358026829856,
   "Tanning Mirror": 1386080730089652324,
   "Cleaning Spray": 1383914169677516840,
   "Favorite Tool": 1372814811603144704,
   "Harvest Tool": 1375973801753448489,
   "Friendship Pot": 1381033769649049702,
+  "Levelup Lollipop": 1393704665530761246,
 
   # Eggs
   "Common Egg": 1372818043075563540,
@@ -108,9 +112,13 @@ async def on_message(message):
   # Correct message to relay found.
   content = f"{message.content}"
 
-  # Official server messed up on this for Friendship Pot.
-  content = content.replace("Friendship Pot (ROLE NOT FOUND)",
-                            f"<@&{ROLE_IDS['Friendship Pot']}>")
+  # Official server doesn't set up instantly.
+  for line in message.content.splitlines():
+    # Role doesn't exist yet.
+    if "(ROLE NOT FOUND)" in line:
+      # Delete the role not found tag for that item.
+      item = line.replace("**", "").replace(" (ROLE NOT FOUND)", "").split(" ", 1)[1]
+      content = content.replace(line, f"<@&{ROLE_IDS[item]}>")
 
   # Replace role mentions with plain text.
   for role in message.role_mentions:
