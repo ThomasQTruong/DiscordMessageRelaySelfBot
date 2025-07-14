@@ -95,7 +95,7 @@ ROLE_IDS = {
 # Items that will be displayed between stars to indicate that it is good.
 GOOD_ITEMS = [
   # Seeds
-  "Giant Pinecone", "Burning Bud", "Sugar Apple", "Ember Lily", "Beanstalk"
+  "Giant Pinecone", "Burning Bud", "Sugar Apple", "Ember Lily", "Beanstalk",
   # Gears
   "Master Sprinkler", "Levelup Lollipop", "Medium Treat", "Medium Toy",
   # Eggs
