@@ -130,8 +130,11 @@ async def on_message(message):
     if "(ROLE NOT FOUND)" in line:
       # Delete the role not found tag for that item.
       item = line.replace("**", "").replace(" (ROLE NOT FOUND)", "").split(" ", 1)[1]
-      content = content.replace(line, f"<@&{ROLE_IDS[item]}>")
-      embedded_content = embedded_content.replace(f"{item} (ROLE NOT FOUND)", item)
+      if item in ROLE_IDS:
+        # Item role set up in our server.
+        content = content.replace(line, f"<@&{ROLE_IDS[item]}>")
+        embedded_content = embedded_content.replace(f"{item} (ROLE NOT FOUND)", item)
+
 
   # Replace role mentions with plain text.
   for role in message.role_mentions:
