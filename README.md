@@ -36,12 +36,10 @@
     - Your webhook URL for the channel you want the copied text to go.
     - Your Server -> Right-Click Channel -> Edit Channel -> Integrations -> Webhooks -> New Webhook -> Click on Webhook -> Copy Webhook URL.
         - Recommended to keep this private.
-  - GUILD_ID
-    - The server's ID that you want to copy the message from.
-      - Right-Click on Target Server -> Copy Server ID.
-  - CHANNEL_ID
-    - The server's channel ID that you want to copy the message from.
+  - CHANNEL_IDS
+    - The channel ID(s) that you want to copy the message from.
       - Select Server -> Right-Click on Target Channel -> Copy Channel ID.
+      - Format: [ID1, ID2, ID3, ...]
 - Run [discord_message_relay_self_bot.py](discord_message_relay_self_bot.py) and it should automatically work once a new message is sent in the target channel.
 - 24/7 Hosting: [Wispbyte](http://wispbyte.com/)
   - I came across this site which offers free 24/7 hosting and I am currently using this.

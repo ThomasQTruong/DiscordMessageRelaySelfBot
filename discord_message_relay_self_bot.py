@@ -14,7 +14,7 @@ TOKEN = "AccountTokenHere"
 # Insert your webhook URL for the channel you want the copied text to go.
 WEBHOOK_URL = "YourOwnChannelWebHookURL"
 # Inset the server's channel ID that you want to copy the message from.
-CHANNEL_ID = [123456, 789011]
+CHANNEL_IDS = [123456, 789011]
 
 
 bot = commands.Bot(command_prefix = "", self_bot = True)
@@ -29,7 +29,7 @@ async def on_ready():
 async def on_message(message):
   """ When a message is sent. """
   # Ignore messages not from the correct server or channel.
-  if message.channel.id not in CHANNEL_ID:
+  if message.channel.id not in CHANNEL_IDS:
     return
 
   # Ignore messages from itself or duplicates.
