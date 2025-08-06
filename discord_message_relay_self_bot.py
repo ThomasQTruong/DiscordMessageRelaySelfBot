@@ -18,10 +18,8 @@ WEBHOOK_URL = "YourOwnChannelWebHookURL"
 EMBEDDED_STOCK_URL = "YourOwnChannelWebHookURL2"
 # Insert your webhook URL for the channel you want the embedded eggs to go.
 EMBEDDED_EGGS_URL = "YourOwnChannelWebHookURL3"
-# Insert the server's ID that you want to copy the message from.
-GUILD_ID = 1371970717444341802
 # Inset the server's channel ID that you want to copy the message from.
-CHANNEL_ID = 1371986851346386944
+CHANNEL_IDS = [1371986851346386944]
 # Replace with the server's role IDs for the crops.
 ROLE_IDS = {
   # Seeds
@@ -115,7 +113,7 @@ async def on_ready():
 async def on_message(message):
   """ When a message is sent. """
   # Ignore messages not from the correct server or channel.
-  if message.guild.id != GUILD_ID or message.channel.id != CHANNEL_ID:
+  if message.channel.id not in CHANNEL_IDS:
     return
 
   # Ignore messages from itself or duplicates.
