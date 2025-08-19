@@ -57,6 +57,8 @@ ROLE_IDS = {
   "Pitcher Plant": 1388643648639598612,
   "Burning Bud": 1391160305064611911,
   "Giant Pinecone": 1393704409896059021,
+  "Elder Strawberry": 1398912599307059240,
+  "Romanesco": 1407316726646833254,
 
   # Gears
   "Watering Can": 1372814927076786206,
@@ -66,6 +68,7 @@ ROLE_IDS = {
   "Advanced Sprinkler": 1372452574027976764,
   "Godly Sprinkler": 1372452630240170014,
   "Master Sprinkler": 1372452602872201327,
+  "Grandmaster Sprinkler": 1407316962878427236,
   "Medium Toy": 1393704948566458408,
   "Medium Treat": 1393704818799022100,
   "Magnifying Glass": 1388642358026829856,
@@ -75,6 +78,7 @@ ROLE_IDS = {
   "Harvest Tool": 1375973801753448489,
   "Friendship Pot": 1381033769649049702,
   "Levelup Lollipop": 1393704665530761246,
+  "Trading Ticket": 1407316068480974852,
 
   # Eggs
   "Common Egg": 1372818043075563540,
