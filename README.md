@@ -9,10 +9,9 @@
 - Grow A Garden is a ROBLOX game.
 - Relays messages from Grow A Garden's official stock Discord to my own server.
 - Example:
-  - Official Server:
-    - ...
-  - Personal Server:
-    - ...
+  - | Official | Personal |
+    | --- | --- |
+    | ![Official](README-Images/official.PNG) | ![Personal](README-Images/personal.PNG) |
 
 ## Prerequisites
 - discord.py-self
