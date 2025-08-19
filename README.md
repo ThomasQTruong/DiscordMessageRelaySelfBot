@@ -10,10 +10,9 @@
 - Relays messages from Grow A Garden's official stock Discord to my own server.
   - Customizes the relayed message with embedded style.
 - Example:
-  - Official Server:
-    - ...
-  - Personal Server:
-    - ...
+  - | Official | Personal |
+    | --- | --- |
+    | ![Official](README-Images/official.PNG) | ![Official](README-Images/personal.PNG) |
 
 ## Prerequisites
 - discord.py-self
