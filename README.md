@@ -1,6 +1,18 @@
 # Discord Message Relay Self Bot
 - By Thomas Truong
 
+## Usage Examples
+- [GrowAGarden](https://github.com/ThomasQTruong/DiscordMessageRelaySelfBot/tree/GrowAGarden)
+  - Server A (Official):
+    - ...
+  - Server B (Personal):
+    - ...
+- [GrowAGardenEmbedded (Fancy)](https://github.com/ThomasQTruong/DiscordMessageRelaySelfBot/tree/GrowAGardenEmbedded)
+  - Server A (Official):
+    - ...
+  - Server B (Personal):
+    - ...
+
 ## ! WARNING !
 - Self bots are against Discord's TOS, use at your own discretion.
   - Highly recommended to use an alt account (throw-away account).
