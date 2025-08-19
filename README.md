@@ -3,15 +3,13 @@
 
 ## Usage Examples
 - [GrowAGarden](https://github.com/ThomasQTruong/DiscordMessageRelaySelfBot/tree/GrowAGarden)
-  - Server A (Official):
-    - ...
-  - Server B (Personal):
-    - ...
+  - | Server A (Official) | Server B (Personal) |
+    | --- | --- |
+    | ![Official](README-Images/official.PNG) | ![Personal](README-Images/personal-regular.PNG) |
 - [GrowAGardenEmbedded (Fancy)](https://github.com/ThomasQTruong/DiscordMessageRelaySelfBot/tree/GrowAGardenEmbedded)
-  - Server A (Official):
-    - ...
-  - Server B (Personal):
-    - ...
+  - | Server A (Official) | Server B (Personal) |
+    | --- | --- |
+    | ![Official](README-Images/official.PNG) | ![Official](README-Images/personal-embedded.PNG) |
 
 ## ! WARNING !
 - Self bots are against Discord's TOS, use at your own discretion.
